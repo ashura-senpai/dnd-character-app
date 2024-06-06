@@ -35,7 +35,7 @@ export class CharacterService {
     }
 
     async remove(id: string): Promise<Character> {
-        const deletedCharacter = await this.characterModel.findByIdAndRemove(id).exec();
+        const deletedCharacter = await this.characterModel.findByIdAndDelete(id).exec();
         if (!deletedCharacter) {
             throw new NotFoundException('Character not found');
         }
